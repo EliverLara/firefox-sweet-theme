@@ -7,7 +7,7 @@
 menupopup {
 	-moz-appearance: none !important;
 	background: none !important;
-	border: 0 !important;	
+	border: 0 !important;
 	padding: 2px;
 }
 
@@ -24,6 +24,25 @@ menupopup .popup-internal-box {
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) !important;
 }
 
+/* Context menu seperator */
+menupopup menuseparator {
+	-moz-appearance: none !important;
+	border: none !important;
+	background-color: var(--sweet-headerbar-background) !important;
+}
+
+/* Context menu */
+menupopup menu, menupopup menuitem {
+	-moz-appearance: none !important;
+	background: var(--sweet-toolbar-background) !important;
+	color: var(--sweet-toolbar-color);
+	padding: 4px 12px !important;
+}
+
+menupopup menu:hover ,menupopup menuitem:hover {
+	background-color: var(--sweet-popover-button-hover-background) !important;
+}
+
 /* Adjust popovers position */
 panel[type=arrow] {
 	margin-top: 9px !important;
@@ -31,7 +50,7 @@ panel[type=arrow] {
 }
 
 /* Style popovers */
-.panel-arrowcontent .panel-arrowcontent, 
+.panel-arrowcontent .panel-arrowcontent,
 .panel-header, .PanelUI-subView,
 .panel-subview-body, #widget-overflow-mainView,
 panelview {
@@ -47,7 +66,7 @@ panel:not(.tooltip-xul-wrapper) .panel-arrowcontent {
 	color: var(--sweet-toolbar-color) !important;
 }
 
-.panel-arrow {    
+.panel-arrow {
 	fill: var(--sweet-popover-background) !important;
 	stroke: var(--sweet-popover-border-color) !important;
 }
@@ -64,7 +83,7 @@ panel:not(.tooltip-xul-wrapper) .panel-arrowcontent {
 
 /* Style popovers menu buttons */
 .subviewbutton, .toolbarbutton-1 {
-	border-radius: 3px !important;	
+	border-radius: 3px !important;
 	color: var(--sweet-toolbar-color) !important;
 }
 
@@ -93,5 +112,5 @@ toolbarseparator[orient="vertical"] {
 
 /* Remove popover header separator */
 .panel-header {
-	border-bottom: 0 !important;	
+	border-bottom: 0 !important;
 }
