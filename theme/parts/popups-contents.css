@@ -19,6 +19,7 @@
 #contentAreaContextMenu menu image {
 	visibility: hidden;
 }
+
 #contentAreaContextMenu menugroup menuitem image,
 #contentAreaContextMenu .menu-right image {
 	visibility: visible;
@@ -71,7 +72,7 @@ panelview vbox.panel-subview-body > toolbarbutton label {
 	align-items: center;
 }
 #downloadsPanel-mainView .download-state:hover {
-	background-color: var(--sweet-popover-button-hover-background) !important;	
+	background-color: var(--sweet-popover-button-hover-background) !important;
 }
 #downloadsPanel-mainView .download-state:last-child {
     margin-bottom: 8px !important;
@@ -111,7 +112,7 @@ panelview vbox.panel-subview-body > toolbarbutton label {
 	margin-top: 10px;
 	z-index: 10;
 }
-#customization-panelWrapper > .panel-arrowbox {    
+#customization-panelWrapper > .panel-arrowbox {
 	margin-bottom: -5px !important;
 }
 
