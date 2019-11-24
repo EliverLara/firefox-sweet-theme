@@ -70,7 +70,7 @@ tab:hover {
 }
 tab[selected] {
 	color: var(--sweet-tabbar-tab-active-color) !important;
-	text-shadow: 0px 0px 2px #C50ED2;
+	text-shadow: 0px 0px 2px var(--sweet-focused-urlbar-border-color);
 }
 tab:-moz-window-inactive {
 	color: var(--sweet-inactive-tabbar-tab-color) !important;
@@ -198,12 +198,12 @@ tab[selected]:-moz-window-inactive {
 	background:
 	linear-gradient(
 	  to right, 
-	  #5800E2,
-	  #FF00E6
+	  var(--sweet-start-gradient-color),
+	  var(--sweet-end-gradient-color)
 	)
 	left 
 	bottom
-	#161925    
+	var(--sweet-tabbar-tab-active-background)    
 	no-repeat !important; 
   	background-size: 100% 3px!important;
 	border: 0 !important;

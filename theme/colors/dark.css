@@ -87,7 +87,7 @@
 	--sweet-tabbar-tab-hover-background: #0C0E14;
 	--sweet-tabbar-tab-hover-border-bottom-color: #0c0e15;
 	--sweet-tabbar-tab-hover-color: rgb(200, 200, 200);
-	--sweet-tabbar-tab-active-background: #2e2e2e;
+	--sweet-tabbar-tab-active-background: #161925;
 	--sweet-tabbar-tab-active-border-bottom-color: #C50ED2;
 	--sweet-tabbar-tab-active-color: #C3C7D1;
 	--sweet-tabbar-tab-active-hover-background: #0C0E14;
@@ -95,4 +95,7 @@
 	--sweet-inactive-tabbar-tab-active-background: #0C0E14;
 	--sweet-inactive-tabbar-tab-active-border-bottom-color: #C50ED2;
 	--sweet-inactive-tabbar-tab-active-color: rgb(141, 144, 145);  
+
+	--sweet-start-gradient-color: #5800E2;
+	--sweet-end-gradient-color: #FF00E6;
 }
