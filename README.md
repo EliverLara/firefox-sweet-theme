@@ -23,7 +23,7 @@ This theme is supposed to work with current supported Firefox releases:
 ### Installation script
 ```sh
 git clone https://github.com/EliverLara/firefox-sweet-theme/ && cd firefox-sweet-theme
-./scripts/install.sh -g
+./scripts/install.sh
 ```
 
 #### Script options
@@ -81,7 +81,15 @@ git clone https://github.com/EliverLara/firefox-sweet-theme/ && cd firefox-sweet
 
 10. Open Firefox customization panel and move the new tab button to headerbar.
 
-11. Be happy with your new gnomish Firefox.
+11. Be happy with your new vibrant Firefox.
+
+
+## Uninstalling
+
+1. Go to your firefox profile folder. (Go to about:support in Firefox > Application Basics > Profile Directory > Open Directory)
+
+2. Remove the `chrome` folder.
+
 
 ## Enabling optional features
 Open `chrome/firefox-sweet-theme/userChrome.css` with a text editor and follow instructions to enable extra features. Keep in mind this file might change in future versions and your configuration will be lost. You can copy the @imports you want to enable to a new file named `customChrome.css` directly in your `chrome/firefox-sweet-theme` directory if you want it to survive updates. Remember all @imports must be at the top of the file, before other statements.
