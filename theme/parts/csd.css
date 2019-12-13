@@ -45,7 +45,8 @@
 	padding: 0 3px 0 4px;
 	position: absolute !important;	
 	right: 0;
-	top: 0;	
+	top: 0;
+	display: block !important;
 }
 :root[tabsintitlebar] #titlebar .titlebar-buttonbox {
 	-moz-appearance: none !important;
