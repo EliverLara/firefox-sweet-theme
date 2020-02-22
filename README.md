@@ -1,4 +1,4 @@
-![Screenshot of the theme](screenshot.png)
+![Screenshot of the theme](images/preview.png)
 
 ## Description
 
