@@ -46,7 +46,7 @@
 	position: absolute !important;	
 	right: 0;
 	top: 0;
-	display: block !important;
+	display: flex !important;
 }
 :root[tabsintitlebar] #titlebar .titlebar-buttonbox {
 	-moz-appearance: none !important;
@@ -59,7 +59,7 @@
 	border-color: transparent !important;
 	border-radius: 5px !important;
 	height: 30px;
-	margin: 4px -2px !important;
+	margin: 7px -2px !important;
 	padding: 0 2px !important;
 	width: 30px;
 }
