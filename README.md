@@ -22,7 +22,7 @@ This theme is supposed to work with current supported Firefox releases:
 
 ### Installation script
 ```sh
-git clone https://github.com/EliverLara/firefox-sweet-theme/ && cd firefox-sweet-theme
+git clone https://github.com/EliverLara/firefox-sweet-theme && cd firefox-sweet-theme
 ./scripts/install.sh
 ```
 
