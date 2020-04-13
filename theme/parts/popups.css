@@ -29,7 +29,7 @@ menupopup menuseparator {
 menupopup menu, menupopup menuitem {
 	-moz-appearance: none !important;
 	background: var(--sweet-toolbar-background) !important;
-	color: var(--sweet-toolbar-color);
+	color: var(--sweet-toolbar-color) !important; 
 	padding: 4px 12px !important;
 }
 
