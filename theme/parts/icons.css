@@ -3,19 +3,38 @@
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
 /* Built-in firefox icons color */
-.toolbarbutton-icon {
-	fill: var(--sweet-toolbar-color);
-	fill-opacity: 1;
+.toolbarbutton-icon,
+.protections-popup-category-icon,
+.protections-popup-footer-icon {
+	fill: var(--gnome-toolbar-color) !important;
+	fill-opacity: 1 !important;
+}
+
+/* Tabs scroll icons */
+#TabsToolbar .scrollbutton-up {
+	list-style-image: url("../icons/pan-start-symbolic.svg") !important;
+}
+#TabsToolbar .scrollbutton-down {
+	list-style-image: url("../icons/pan-start-symbolic.svg") !important;
 }
 
 /* Popovers subview menu arrow */
 .PanelUI-subView .subviewbutton-nav::after {
-    content: "" !important;
+	content: "" !important;
 	background: url("../icons/pan-start-symbolic.svg");
 	background-size: contain;
 	height: 16px;
 	width: 16px;
 	margin-top: -2px !important;
+}
+.protections-popup-category::after {
+	content: url("../icons/pan-start-symbolic.svg") !important;
+}
+.identity-popup-content-blocking-category::after {
+	content: url("../icons/pan-start-symbolic.svg") !important;
+}
+#identity-popup-security-expander .button-icon {
+	list-style-image: url("../icons/pan-start-symbolic.svg") !important;
 }
 
 /* Popovers subview back button */
@@ -28,16 +47,13 @@
 	-moz-appearance: none !important;
 	list-style-image: url("../icons/pan-end-symbolic.svg") !important;
 	width: 16px !important;
-    height: 16px !important;
+	height: 16px !important;
 }
 menu[disabled] > .menu-right {
 	opacity: 0.3;
 }
-@media (prefers-color-scheme: light) {
-	menu:not([disabled]):hover > .menu-right,
-	menu[open] > .menu-right {
-		filter: invert(100%) brightness(200%);
-	}
+menu:not([disabled]):hover > .menu-right {
+	filter: invert(100%) brightness(200%);
 }
 
 /* Arrow down buttons */
@@ -45,9 +61,9 @@ menu[disabled] > .menu-right {
 #sidebar-switcher-arrow,
 #viewButton .button-menu-dropmarker {
 	-moz-appearance: none !important;
-    list-style-image: url("../icons/pan-down-symbolic.svg") !important;
-    width: 16px !important;
-    height: 16px !important;
+	list-style-image: url("../icons/pan-down-symbolic.svg") !important;
+	width: 16px !important;
+	height: 16px !important;
 }
 .menulist-label-box:after {
 	content: url("../icons/pan-down-symbolic.svg") !important;
@@ -56,16 +72,16 @@ menu[disabled] > .menu-right {
 /* Arrow up buttons */
 .expander-up > .button-box {
 	-moz-appearance: none !important;
-    list-style-image: url("../icons/pan-up-symbolic.svg") !important;
-    width: 16px !important;
-    height: 16px !important;
+	list-style-image: url("../icons/pan-up-symbolic.svg") !important;
+	width: 16px !important;
+	height: 16px !important;
 }
 
 /* Search entries */
 #urlbar[pageproxystate="invalid"] > #identity-box > #identity-icon,
 .searchbar-search-icon,
 #search-box .textbox-search-sign {
-    list-style-image: url(../icons/edit-find-symbolic.svg) !important;
+	list-style-image: url(../icons/edit-find-symbolic.svg) !important;
 	opacity: 0.7 !important;
 }
 #search-box .textbox-search-sign {
@@ -77,7 +93,7 @@ menu[disabled] > .menu-right {
 treechildren::-moz-tree-twisty {
 	list-style-image: url("../icons/pan-down-symbolic.svg") !important;
 	width: 16px !important;
-    height: 16px !important;
+	height: 16px !important;
 }
 treechildren::-moz-tree-twisty(open) {
 	list-style-image: url("../icons/pan-end-symbolic.svg") !important;
@@ -95,10 +111,43 @@ treechildren::-moz-tree-twisty(selected, focus, open) {
 .sidebar-panel[lwt-sidebar-brighttext] .sidebar-placesTreechildren::-moz-tree-twisty(open) {
 	list-style-image: url("../icons/pan-end-symbolic-light.svg") !important;
 }
+/* Sidebar: History: clock icon */
+#historyTree treechildren::-moz-tree-image {
+	list-style-image: url("../icons/preferences-system-time-symbolic.svg") !important;
+}
 
-/* Toolbars close button */
-.close-icon:not(.tab-close-button) {
-	list-style-image: url("../icons/window-close-symbolic.svg") !important;
+/* Menu checkbox */
+menuitem[type="checkbox"] {
+	list-style-image: url("../icons/checkbox-symbolic.svg") !important;
+}
+menuitem[type="checkbox"][checked="true"] {
+	list-style-image: url("../icons/checkbox-checked-symbolic.svg") !important;
+}
+menuitem[type="checkbox"][disabled="true"] .menu-iconic-icon {
+	opacity: 0.5;
+}
+menuitem[type="checkbox"]:not([disabled="true"]):hover .menu-iconic-icon {
+	filter: invert(100%) brightness(200%);
+}
+
+/* Menu radio */
+menuitem[type="radio"] {
+	list-style-image: url("../icons/radio-symbolic.svg") !important;
+}
+menuitem[type="radio"][checked="true"] {
+	list-style-image: url("../icons/radio-checked-symbolic.svg") !important;
+}
+menuitem[type="radio"][disabled="true"] .menu-iconic-icon {
+	opacity: 0.5;
+}
+menuitem[type="radio"]:not([disabled="true"]):hover .menu-iconic-icon {
+	filter: invert(100%) brightness(200%);
+}
+
+/* Close button */
+.close-icon,
+.identity-popup-permission-remove-button .button-icon {
+	list-style-image: url("../icons/window-close-symbolic-light.svg") !important;
 }
 
 /* Window buttons */
@@ -124,10 +173,10 @@ treechildren::-moz-tree-twisty(selected, focus, open) {
 }
 /* Sidebar button */
 #sidebar-button:-moz-locale-dir(ltr):not([positionend])  .toolbarbutton-icon, #sidebar-button:-moz-locale-dir(rtl)[positionend]  .toolbarbutton-icon {
-    list-style-image: url("../icons/toggle-sidebar-symbolic.svg") !important;
+	list-style-image: url("../icons/toggle-sidebar-symbolic.svg") !important;
 }
 #sidebar-button .toolbarbutton-icon {
-    list-style-image: url("../icons/toggle-right-sidebar-symbolic.svg");
+	list-style-image: url("../icons/toggle-right-sidebar-symbolic.svg");
 }
 /* Back button */	
 #nav-bar #back-button,
@@ -144,7 +193,8 @@ treechildren::-moz-tree-twisty(selected, focus, open) {
 	list-style-image: url("../icons/open-menu-symbolic.svg") !important;
 }
 /* New tab button */
-#new-tab-button {
+#new-tab-button,
+.tabs-newtab-button {
 	list-style-image: url("../icons/tab-new-symbolic.svg") !important;
 }
 /* Home button */
@@ -192,7 +242,11 @@ treechildren::-moz-tree-twisty(selected, focus, open) {
 }
 /* New window button */
 #new-window-button {
-	list-style-image: url("../icons/window-new-symbolic.svg.svg") !important;
+	list-style-image: url("../icons/window-new-symbolic.svg") !important;
+}
+/* Bookmarks menu button */
+#bookmarks-menu-button {
+	list-style-image: url("../icons/starred-symbolic.svg") !important;
 }
 /* History button */
 #history-panelmenu {
@@ -236,6 +290,9 @@ treechildren::-moz-tree-twisty(selected, focus, open) {
 /* Invert icons color in dark variant */
 @media (prefers-color-scheme: dark) {
 	.PanelUI-subView .subviewbutton-nav::after,
+	.protections-popup-category::after,
+	.identity-popup-content-blocking-category::after,
+	#identity-popup-security-expander .button-icon,
 	.subviewbutton-back .toolbarbutton-icon,
 
 	.menu-right,
@@ -250,7 +307,11 @@ treechildren::-moz-tree-twisty(selected, focus, open) {
 	#sidebar-switcher-arrow,
 	#viewButton .button-menu-dropmarker,
 	
+	menuitem[type="checkbox"] .menu-iconic-icon,
+	menuitem[type="radio"] .menu-iconic-icon,
+	
 	.close-icon:not(.tab-close-button) image,
+	.identity-popup-permission-remove-button .button-icon,
 	
 	:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-close .toolbarbutton-icon,
 	:root[tabsintitlebar] #titlebar #titlebar-close .toolbarbutton-icon,
@@ -270,6 +331,7 @@ treechildren::-moz-tree-twisty(selected, focus, open) {
 	#context-forward .menu-iconic-icon,
 	#PanelUI-menu-button .toolbarbutton-icon,
 	#new-tab-button .toolbarbutton-icon,
+	.tabs-newtab-button .toolbarbutton-icon,
 	#home-button .toolbarbutton-icon,
 	#preferences-button .toolbarbutton-icon,
 	#fullscreen-button .toolbarbutton-icon,
@@ -284,6 +346,7 @@ treechildren::-moz-tree-twisty(selected, focus, open) {
 	#add-ons-button .toolbarbutton-icon,
 	#find-button .toolbarbutton-icon,
 	#new-window-button .toolbarbutton-icon,
+	#bookmarks-menu-button .toolbarbutton-icon,
 	#history-panelmenu .toolbarbutton-icon,
 	#alltabs-button .toolbarbutton-icon,
 	#cut-button .toolbarbutton-icon,
@@ -303,9 +366,12 @@ treechildren::-moz-tree-twisty(selected, focus, open) {
 	treechildren::-moz-tree-twisty(open) {
 		list-style-image: url("../icons/pan-end-symbolic-light.svg") !important;
 	}
+	#historyTree treechildren::-moz-tree-image {
+		list-style-image: url("../icons/preferences-system-time-symbolic-light.svg") !important;
+	}
 	
 	/* Fix for extensions icons */	
 	.webextension-browser-action {
-    	list-style-image: var(--webextension-menupanel-image-light, inherit) !important;
+		list-style-image: var(--webextension-menupanel-image-light, inherit) !important;
 	}
 }
