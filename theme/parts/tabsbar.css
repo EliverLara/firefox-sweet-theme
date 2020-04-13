@@ -55,7 +55,7 @@ tab > stack {
 
 /* Space between tabs */
 .tabbrowser-tab:not([pinned=true]) {
-	margin: 0 4px !important;
+	margin: 0 2px !important;
 }
 
 /* Tab labels */
@@ -189,6 +189,9 @@ tab[selected]:-moz-window-inactive {
 	display: none;
 }
 
+.tab-background {
+	background:var(--sweet-toolbar-background) !important;
+}
 /* Active tab */
 .tab-background[selected=true] {
 	background:
