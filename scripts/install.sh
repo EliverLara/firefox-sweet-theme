@@ -17,7 +17,7 @@ done
 # Define profile folder path.
 if test -z "$PROFILENAME" 
 	then
-		PROFILEFOLDER="$FIREFOXFOLDER/*.default"
+		PROFILEFOLDER="$FIREFOXFOLDER/*.default-release"
 	else
 		PROFILEFOLDER="$FIREFOXFOLDER/$PROFILENAME"
 fi
@@ -32,7 +32,7 @@ cd chrome
 
 # Copy theme repo inside
 echo "Coping repo in $PWD"
-cp -R $THEMEDIRECTORY $PWD
+cp -rf $THEMEDIRECTORY $PWD
 
 # Create single-line user CSS files if non-existent or empty.
 [[ -s userChrome.css ]] || echo >> userChrome.css
@@ -50,6 +50,6 @@ fi
 
 # Symlink user.js to firefox-sweet-theme one.
 echo "Set configuration user.js file"
-ln -s chrome/firefox-sweet-theme/configuration/user.js ../user.js
+ln -srf firefox-sweet-theme/configuration/user.js ../user.js
 
 echo "Done."
