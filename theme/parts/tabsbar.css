@@ -189,6 +189,9 @@ tab[selected]:-moz-window-inactive {
 	display: none;
 }
 
+.tab-background, #TabsToolbar .toolbar-items {
+	background: var(--sweet-toolbar-background) !important;
+}
 /* Active tab */
 .tab-background[selected=true] {
 	background:
