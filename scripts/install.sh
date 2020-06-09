@@ -7,7 +7,7 @@ GNOMISHEXTRAS=true
 
 # Get options.
 while getopts 'f:p:g' flag; do
-	case "${flag}" in    
+	case "${flag}" in
 		f) FIREFOXFOLDER="${OPTARG}" ;;
 		p) PROFILENAME="${OPTARG}" ;;
 		g) GNOMISHEXTRAS=true ;;
@@ -15,9 +15,9 @@ while getopts 'f:p:g' flag; do
 done
 
 # Define profile folder path.
-if test -z "$PROFILENAME" 
+if test -z "$PROFILENAME"
 	then
-		PROFILEFOLDER="$FIREFOXFOLDER/*.default-release"
+		PROFILEFOLDER="$FIREFOXFOLDER/*.default-release-*"
 	else
 		PROFILEFOLDER="$FIREFOXFOLDER/$PROFILENAME"
 fi
@@ -27,7 +27,9 @@ cd $PROFILEFOLDER
 echo "Installing theme in $PWD"
 
 # Create a chrome directory if it doesn't exist.
+echo "Removing old theme"
 rm -rf chrome
+echo "Creating new directory"
 mkdir -p chrome
 cd chrome
 
