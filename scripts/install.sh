@@ -3,7 +3,7 @@
 THEMEDIRECTORY=$(cd `dirname $0` && cd .. && pwd)
 FIREFOXFOLDER=~/.mozilla/firefox/
 PROFILENAME=""
-GNOMISHEXTRAS=false
+GNOMISHEXTRAS=true
 
 # Get options.
 while getopts 'f:p:g' flag; do
@@ -27,6 +27,7 @@ cd $PROFILEFOLDER
 echo "Installing theme in $PWD"
 
 # Create a chrome directory if it doesn't exist.
+rm -rf chrome
 mkdir -p chrome
 cd chrome
 
