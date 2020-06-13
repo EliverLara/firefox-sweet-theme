@@ -28,7 +28,7 @@ echo "Installing theme in $PWD"
 
 # Create a chrome directory if it doesn't exist.
 echo "Removing old theme"
-rm -rf chrome
+[[ -d chrome ]] && rm -rf chrome
 echo "Creating new directory"
 mkdir -p chrome
 cd chrome
