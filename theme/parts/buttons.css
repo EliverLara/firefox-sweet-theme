@@ -132,7 +132,7 @@ menulist:hover .menulist-label-box,
 #TabsToolbar .toolbarbutton-1:active, #TabsToolbar .toolbarbutton-1[open],
 menulist[open] .menulist-label-box,
 .expander-down:active, .expander-up:active {
-	background: var(--sweet-button-active-background) !important;
+	background: linear-gradient(45deg, rgba(var(--sweet-start-gradient-color-rgb), 0.5), rgba(var(--sweet-end-gradient-color-rgb), 0.5)) !important;
 	box-shadow: var(--sweet-button-active-box-shadow) !important;
 	border-color: var(--sweet-button-active-border-color) !important;
 	border-bottom-color: var(--sweet-button-active-border-color) !important;

@@ -98,4 +98,6 @@
 
 	--sweet-start-gradient-color: #5800E2;
 	--sweet-end-gradient-color: #FF00E6;
+	--sweet-start-gradient-color-rgb: 88,0,226;
+	--sweet-end-gradient-color-rgb: 255,0,230;
 }
