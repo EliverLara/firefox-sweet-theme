@@ -49,10 +49,10 @@
   <g
      id="g6"
      transform="matrix(-1,0,0,1,16.024,0)"
-     style="color:#000000;fill:#9b9b9b">
+     style="color:#9b9b9b;fill:#9b9b9b">
     <path
        d="m 15.012,1 h -14 v 14 h 14 z m -1,1 v 12 h -12 V 2 Z"
-       style="font-weight:400;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;text-transform:none;text-orientation:mixed;white-space:normal;shape-padding:0;overflow:visible;isolation:auto;mix-blend-mode:normal;marker:none"
+       style="font-weight:400;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#9b9b9b;text-transform:none;text-orientation:mixed;white-space:normal;shape-padding:0;overflow:visible;isolation:auto;mix-blend-mode:normal;marker:none"
        font-weight="400"
        overflow="visible"
        id="path2"

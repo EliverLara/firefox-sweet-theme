@@ -12,7 +12,7 @@
    version="1.1"
    id="svg4"
    sodipodi:docname="pan-end-symbolic-light.svg"
-   inkscape:version="0.92.4 5da689c313, 2019-01-14">
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
   <metadata
      id="metadata10">
     <rdf:RDF>
@@ -35,20 +35,21 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="900"
+     inkscape:window-width="908"
      inkscape:window-height="480"
      id="namedview6"
      showgrid="false"
-     inkscape:zoom="14.75"
+     inkscape:zoom="6.4547009"
      inkscape:cx="8.1355932"
      inkscape:cy="7.7288136"
      inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="0"
-     inkscape:current-layer="svg4" />
+     inkscape:current-layer="svg4"
+     inkscape:document-rotation="0" />
   <path
      d="M6 13l5-5-5-5z"
      fill="#9b9b9b"
      id="path2"
-     style="fill:#ffffff" />
+     style="fill:#9b9b9b;fill-opacity:1" />
 </svg>
