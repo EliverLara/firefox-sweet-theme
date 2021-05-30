@@ -17,7 +17,7 @@
 /* Remove icons from the main context menu */
 #contentAreaContextMenu menuitem image,
 #contentAreaContextMenu menu image {
-	visibility: hidden;
+	visibility: visible;
 }
 #contentAreaContextMenu menugroup menuitem image,
 #contentAreaContextMenu .menu-right image {
