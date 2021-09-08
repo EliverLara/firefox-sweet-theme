@@ -2,26 +2,27 @@
 
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
+:root {
+	--space-above-tabbar: 0 !important;
+}
+
+#TabsToolbar:not([inFullscreen]) > .toolbar-items {
+	margin-bottom: -1px !important;
+}
+
+/* Fix tabs bar icon sizes */
+#TabsToolbar {
+    --toolbarbutton-inner-padding: var(--toolbarbutton-inner-padding) !important;
+}
 /* Tabs bar height */
 #tabbrowser-tabs,
 #tabbrowser-tabs arrowscrollbox {
-	height: initial !important;
-	min-height: initial !important;
+	height: auto !important;
+	min-height: auto !important;
 }
 tab > stack {
-	height: 30px !important;
-	min-height: 30px !important;
-}
-/* Extra margin for the first and last tabs */
-.tabbrowser-tab[first-tab]:not([pinned=true]) {
-	margin-left: 8px !important;
-}
-.tabbrowser-tab[last-tab]:not([pinned=true]) {
-	margin-right: 8px !important;
-}
-
-#TabsToolbar .toolbar-items {
-	margin-bottom: -1px !important;
+	height: 36px !important;
+	min-height: 36px !important;
 }
 
 /* Remove hover effects on tab bar buttons */
@@ -55,7 +56,28 @@ tab > stack {
 
 /* Space between tabs */
 .tabbrowser-tab:not([pinned=true]) {
-	margin: 0 4px !important;
+	margin: 0 !important;
+}
+.tabbrowser-tab {
+	border: 0 !important;
+	padding-inline: 0 !important;
+}
+#TabsToolbar {
+	padding: 0 !important;
+}
+#TabsToolbar .toolbarbutton-1:last-child {
+	margin-right: 4px !important;
+}
+
+/* Tabs borders */
+.tabbrowser-tab {
+	border-right: 1px solid var(--sweet-toolbar-border-color) !important;
+}
+#TabsToolbar {
+	margin-right: -1px !important;
+}
+#tabbrowser-tabs[overflow=true] .tabbrowser-tab[first-visible-unpinned-tab] {
+	border-left: 1px solid var(--sweet-toolbar-border-color) !important;
 }
 
 /* Tab labels */
@@ -79,6 +101,13 @@ tab[selected]:-moz-window-inactive {
 	color: var(--sweet-inactive-tabbar-tab-active-color) !important;
 }
 
+/* Reset tab background */
+.tab-background {
+	border-radius: 0 !important;
+	box-shadow: none !important;
+	margin-block: 0 !important;
+}
+
 /* Center all inside tab */
 .tab-content {
 	display: flex;
@@ -100,74 +129,64 @@ tab[selected]:-moz-window-inactive {
 }
 
 /* Put tab close button and icon sound to the right */
-.tab-icon-sound[soundplaying="true"], .tab-icon-sound[muted="true"],
-.tab-icon-sound[activemedia-blocked="true"] {
+.tabbrowser-tab .tab-close-button {
 	margin-left: auto !important;
-}
-.tabbrowser-tab:not([soundplaying]):not([muted]):not([activemedia-blocked]) .tab-close-button {
-	margin-left: auto !important;
-}
-.tab-icon-sound {
-	margin-right: 6px;
 }
 
 /* Force tab favicon to the center */
-.tabbrowser-tab:not([class*="identity-color-"]) .tab-throbber, .tabbrowser-tab:not([class*="identity-color-"]) .tab-throbber-fallback {
-	margin-left: auto;
-}
-.tabbrowser-tab:not([busy]):not([class*="identity-color-"]) .tab-icon-image {
-	margin-left: auto;
-}
-
-/* If tab favicon is not present, force tab label to the center */
-.tabbrowser-tab .tab-label-container {
-	margin-left: 0 !important;
-}
-.tabbrowser-tab:not([image]):not([busy]):not([progress]):not([class*="identity-color-"]) .tab-label-container,
 .tabbrowser-tab:not([class*="identity-color-"]) .tab-icon-stack {
 	margin-left: auto !important;
 }
 
+/* Tab icon margin */
+.tabbrowser-tab:not([pinned]) .tab-icon-stack {
+	margin-right: 2px;
+}
+
+
 /* If tab close button is not present, don't force favicon to the center */
-#tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([selected="true"]) .tab-throbber,
-#tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([selected="true"]) .tab-throbber-fallback,
-#tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([selected="true"]):not([busy]) .tab-icon-image,
-#tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([selected="true"]):not([image]) .tab-label-container,
 #tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([selected="true"]) .tab-icon-stack {
 	margin-left: 0 !important;
 }
 
-/* Remove tab icons */
-/* tab:not([pinned=true]) .tab-icon-image {
-	display: none;
-} */
+/* Tab buttons */
+.tab-icon-overlay,
+.tab-close-button {
+	-moz-appearance: none !important;
+	border: 0px solid transparent;
+	box-sizing: content-box; /* Avoid deformation on flexbox */
+	border-radius: 99px !important;
+	padding: 4px !important;
+	background-size: 24px;
+}
+:root:not(:-moz-window-inactive) .tab-icon-overlay:hover,
+:root:not(:-moz-window-inactive) .tab-close-button:hover {
+	background-image: var(--gnome-tabbar-close-hover);
+}
+
+.tab-icon-stack:is([soundplaying], [muted], [activemedia-blocked]) image {
+	 margin: auto !important;
+}
+
 
 /* Close tab button */
 :root {	
 	--sweet-fill-icon: red !important;
 }
 .tab-close-button {
-	-moz-appearance: none !important;
-	border: 1px solid transparent;
-	box-sizing: content-box; /* Avoid deformation on flexbox */
-	border-radius: 5px;
 	list-style-image: url("../icons/window-close-symbolic.svg") !important;
-	height: 16px;
-	opacity: .3;
-	padding: 2px;
-	width: 16px;
+	fill: var(--sweet-toolbar-color) !important;
+	fill-opacity: 1 !important;
+	-moz-context-properties: fill, fill-opacity !important;
+	height: 16px !important;
+	opacity: 1 !important;
+	width: 16px !important;
 }
 
 :root:-moz-window-inactive .tab-close-button:not(#hack) {
 	opacity: .18 !important;
 }
-:root:not(:-moz-window-inactive) .tab-close-button:hover {	
-	background-image: var(--sweet-button-background);
-	box-shadow: var(--sweet-button-box-shadow);
-	border: 1px solid var(--sweet-button-border-color);
-	border-bottom-color: var(--sweet-button-border-accent-color);
-	opacity: 1;
-}
+
 :root:not(:-moz-window-inactive) .tab-close-button:active {
 	background-image: var(--sweet-button-active-background) !important;
 	box-shadow: var(--sweet-button-active-box-shadow) !important;
@@ -179,6 +198,15 @@ tab[selected]:-moz-window-inactive {
 .tab-close-button:active:not(:hover) {
 	background-image: none !important;
 	box-shadow: none !important;
+}
+
+/* Autohide*/
+
+.tabbrowser-tab:not([selected="true"]) .tab-close-button {
+	visibility: hidden;
+}
+.tabbrowser-tab:hover .tab-close-button {
+	visibility: visible;
 }
 
 /* Tab close button etc. positioning */
@@ -247,7 +275,6 @@ tab[selected]:-moz-window-inactive {
 }
 
 /* Remove container bottom line indicator */
-.tabbrowser-tab[usercontextid] > .tab-stack > .tab-background > .tab-bottom-line,
 .tabbrowser-tab[usercontextid] > .tab-stack > .tab-background > .tab-context-line {
 	display: none;
 }
