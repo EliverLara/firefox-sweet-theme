@@ -17,7 +17,7 @@ toolbarspring {
 	box-shadow: none !important;
 }
 #urlbar-background {
-	box-shadow: var(sweet-entry-box-shadow) !important;
+	box-shadow: var(--sweet-entry-box-shadow) !important;
 	border: 0 !important;
 	background: transparent !important;
 }
@@ -33,24 +33,25 @@ toolbarspring {
 	height: auto !important;
 	max-height: unset !important;
 }
+#urlbar #urlbar-input-container {
+	padding: 0 !important;
+}
 #urlbar[breakout][breakout-extend] #urlbar-input-container {
 	height: 30px !important;
 	max-height: 30px !important;
-	padding: 0 !important;
 }
 
 /* URL bar results */
 .urlbarView {
 	background: transparent !important;
-	color: var(sweet-toolbar-color) !important;
-	margin: -2px 0 0 0 !important;
+	color: var(--sweet-toolbar-color) !important;
+	margin: 0 !important;
 	width: 100% !important;
 }
 
 .urlbarView-body-outer {
 	--item-padding-start: 0 !important;
 	--item-padding-end: 0 !important;
-	max-height: 40vh !important;
 	overflow-x: auto;
 	padding: 0 8px !important;
 }
@@ -67,49 +68,30 @@ toolbarspring {
 	border-radius: 5px !important;
 }
 
-.urlbarView-row-inner:active, .urlbarView-row[selected] .urlbarView-row-inner {
-	background: var(sweet-tabbar-tab-active-border-bottom-color) !important;
+.urlbarView-row[selected] .urlbarView-row-inner {
+	background: var(--sweet-accent) !important;
+	color: white;
+}
+.urlbarView-row:not([selected]):hover .urlbarView-row-inner {
+	background: var(--sweet-popover-button-hover-background) !important;
+}
+
+.urlbarView-action {
+	background: transparent !important;
 }
 
 /* Search engines buttons */	
 .search-one-offs {
-	margin-top: 6px !important;
 	margin-bottom: 2px !important;
 	padding: 8px !important;
-	background: var(sweet-popover-background) !important;
-	border-top: 1px solid var(sweet-popover-border-color) !important;
+	background: var(--sweet-popover-background) !important;
+	border-top: 1px solid var(--sweet-popover-border-color) !important;
 	border-radius: 0 0 5px 5px !important;
-}
-
-.searchbar-engine-one-off-item {
-	--toolbarbutton-active-background: transparent !important;
-	--toolbarbutton-hover-background: transparent !important;
-	-moz-appearance: none !important;
-	background: var(sweet-button-background) !important;
-	box-shadow: var(sweet-button-box-shadow) !important;
-	border: 1px solid var(sweet-button-border-color) !important;
-	border-left-width: 0 !important;
-	border-bottom-color: var(sweet-button-border-accent-color) !important;
-	padding: 0 2px !important;
-	min-height: 30px !important;
-	min-width: 30px !important;
-	margin: 0 !important;
-}
-.searchbar-engine-one-off-item:hover, .searchbar-engine-one-off-item[selected] {
-	background: var(sweet-button-hover-background) !important;
-	color: unset !important;
-}
-.searchbar-engine-one-off-item:first-child {	
-	border-radius: 5px 0 0 5px;
-	border-left-width: 1px !important;
-}
-.searchbar-engine-one-off-item.last-engine, .searchbar-engine-one-off-item:last-child {	
-	border-radius: 0 5px 5px 0;
 }
 
 #urlbar-anon-search-settings-compact {
 	border-left-width: 1px !important;
-	border-bottom: 1px solid var(sweet-button-border-accent-color) !important;
+	border-bottom: 1px solid var(--sweet-button-border-accent-color) !important;
 	border-radius: 5px;	
 	margin-left: 6px !important;
 }
@@ -137,4 +119,53 @@ toolbarspring {
 .searchbar-search-button:hover:active .searchbar-search-icon {
 	background-color: transparent !important;
 	fill-opacity: 1 !important;
+}
+
+/* Search mode indicator */
+#urlbar-search-mode-indicator,
+#urlbar-label-box,
+#urlbar-zoom-button {
+	background: var(--sweet-popover-background) !important;
+	border: 1px solid var(--sweet-popover-border-color) !important;
+	border-radius: 9px;
+	outline: 0 !important;
+	margin: 4px 0;
+}
+#urlbar-search-mode-indicator-title {
+    color: #0060df;
+    padding-inline: 4px !important;
+}
+#urlbar-search-mode-indicator-close {
+	background-size: contain !important;
+	border-radius: 0 9px 9px 0;
+	opacity: 0.8;
+}
+#urlbar-zoom-button {
+	opacity: 0.8;
+}
+#urlbar-zoom-button:hover {
+	opacity: 1;
+}
+
+/* Firefox identity box */
+#identity-box[pageproxystate="valid"].notSecureText > .identity-box-button,
+#identity-box[pageproxystate="valid"].chromeUI > .identity-box-button,
+#identity-box[pageproxystate="valid"].extensionPage > .identity-box-button,
+#urlbar-label-box {
+  background-color: transparent !important;
+}
+
+#identity-box[pageproxystate="valid"].notSecureText > .identity-box-button:hover:not([open]),
+#identity-box[pageproxystate="valid"].chromeUI > .identity-box-button:hover:not([open]),
+#identity-box[pageproxystate="valid"].extensionPage > .identity-box-button:hover:not([open]) {
+  background-color: hsla(0,0%,70%,.2) !important;
+}
+
+#identity-box[pageproxystate="valid"].notSecureText > .identity-box-button:hover:active,
+#identity-box[pageproxystate="valid"].notSecureText > .identity-box-button[open=true],
+#identity-box[pageproxystate="valid"].chromeUI > .identity-box-button:hover:active,
+#identity-box[pageproxystate="valid"].chromeUI > .identity-box-button[open=true],
+#identity-box[pageproxystate="valid"].extensionPage > .identity-box-button:hover:active,
+#identity-box[pageproxystate="valid"].extensionPage > .identity-box-button[open=true] {
+  background-color: hsla(0,0%,70%,.3) !important;
 }
