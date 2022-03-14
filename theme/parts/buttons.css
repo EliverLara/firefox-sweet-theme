@@ -36,10 +36,10 @@
 	border-bottom-color: var(--sweet-button-border-accent-color) !important;
 	border-radius: 5px !important;
 	padding: 0 2px !important;
-	height: 30px !important;
-	max-height: 30px !important;
-	min-height: 30px !important;
-	min-width: 30px !important;
+	height: 34px !important;
+	max-height: 34px !important;
+	min-height: 34px !important;
+	min-width: 34px !important;
 	color: var(--sweet-toolbar-color) !important;
 }
 

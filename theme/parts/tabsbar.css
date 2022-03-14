@@ -17,6 +17,11 @@
 /* Tabs bar height */
 #tabbrowser-tabs,
 #tabbrowser-tabs arrowscrollbox {
+	height: auto !important;
+	min-height: auto !important;
+}
+
+tab > stack {
 	height: 36px !important;
 	min-height: 36px !important;
 }

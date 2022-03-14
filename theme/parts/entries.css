@@ -20,9 +20,9 @@
 	border-radius: 5px !important;
 	box-shadow: var(--sweet-urlbar-box-shadow) !important;
 	color: var(--sweet-urlbar-color) !important;
-	height: 32px !important;
-	max-height: 32px !important;
-	margin: 0 !important;
+	height: 34px !important;
+	max-height: 34px !important;
+	margin-top: 2px !important;
 	padding: 6px !important;
 	box-sizing: border-box;
 }
