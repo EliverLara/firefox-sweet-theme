@@ -145,3 +145,12 @@ menulist {
 .expander-down image, .expander-up image {
 	margin: 6px !important;
 }
+
+/* Firefox 108 Toolbar Button and Alignment Fixes */
+toolbar .toolbarbutton-1 {
+	width: auto;
+  }
+  
+  #nav-bar-customization-target {
+	height: 32px;
+  }
