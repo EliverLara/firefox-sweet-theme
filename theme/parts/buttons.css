@@ -11,6 +11,7 @@
 }
 
 /* Buttons  */
+menulist,
 #nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton),
 .subviewbutton.panel-subview-footer,
 .panel-footer button,
@@ -27,31 +28,58 @@
 #viewButton,
 .close-icon:not(.tab-close-button),
 #TabsToolbar .toolbarbutton-1,
+button.close,
 .menulist-label-box,
-.expander-down, .expander-up {
+.expander-down, .expander-up,
+.notification-button,
+.protections-popup-footer-button,
+#identity-popup-security-expander,
+#protections-popup-info-button,
+#PanelUI-panic-view-button,
+.tracking-protection-button,
+.dialog-button,
+.autocomplete-richlistitem[type="loginsFooter"],
+.dialog-button-box button,
+.searchbar-engine-one-off-item,
+.permission-popup-permission-remove-button,
+#protections-popup-trackers-blocked-counter-box,
+.button.connect-device,
+#item-choose button{
 	-moz-appearance: none !important;
 	background: var(--sweet-button-background) !important;
 	box-shadow: var(--sweet-button-box-shadow) !important;
 	border: 1px solid var(--sweet-button-border-color) !important;
 	border-bottom-color: var(--sweet-button-border-accent-color) !important;
 	border-radius: 5px !important;
-	padding: 0 2px !important;
-	height: 34px !important;
-	max-height: 34px !important;
-	min-height: 34px !important;
-	min-width: 34px !important;
+	padding: 0 1px !important;
+	height: 32px !important;
+	max-height: 32px !important;
+	min-height: 32px !important;
+	min-width: 32px !important;
 	color: var(--sweet-toolbar-color) !important;
 }
 
+.subviewbutton-iconic {
+	-moz-box-pack: center !important;
+}
+
 /* Buttons with margins */
-#nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton) {
+#nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton),
+#nav-bar toolbaritem.toolbaritem-combined-buttons,
+.notification-button,
+.subviewbutton.panel-subview-footer:not(:only-of-type),
+.panel-footer button:not(:only-of-type) {
 	margin: 0 2px !important;
 }
 #TabsToolbar .toolbarbutton-1 {
 	margin: 1px 3px 2px !important;
 }
+.close-icon:not(.tab-close-button) {
+	margin-left: 6px !important;
+}
 
 /* Text buttons */
+menulist,
 .subviewbutton.panel-subview-footer,
 .panel-footer button,
 #downloadsHistory,
@@ -59,11 +87,40 @@
 #appMenu-popup .panel-banner-item,
 #appMenu-zoomReset-button:not(#appMenu-fxa-label):not(#hack),
 #tracking-protection-preferences-button:not(#hack),
-.findbar-container toolbarbutton.findbar-button {
+.findbar-container toolbarbutton.findbar-button,
+.notification-button,
+.protections-popup-footer-button,
+#PanelUI-panic-view-button,
+.tracking-protection-button,
+.dialog-button,
+.autocomplete-richlistitem[type="loginsFooter"],
+.dialog-button-box button,
+.toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > #appMenu-fxa-label2:not(#hack),
+#protections-popup-trackers-blocked-counter-box,
+.button.connect-device,
+#item-choose button  {
 	padding: 2px 16px !important;
 	text-align: center !important;
 }
-.subviewbutton.panel-subview-footer label {
+
+.subviewbutton.panel-subview-footer label,
+.panel-footer button,
+#downloadsHistory,
+#overflowMenu-customize-button,
+#appMenu-popup .panel-banner-item,
+#appMenu-popup #appMenu-zoomReset-button2:not(#hack),
+#tracking-protection-preferences-button:not(#hack),
+.findbar-container toolbarbutton.findbar-button,
+.notification-button,
+.protections-popup-footer-button,
+#PanelUI-panic-view-button,
+.tracking-protection-button,
+.dialog-button,
+.autocomplete-richlistitem[type="loginsFooter"],
+.dialog-button-box button,
+#protections-popup-trackers-blocked-counter-box,
+.button.connect-device,
+#item-choose button {
 	text-align: center !important;
 }
 
@@ -74,21 +131,27 @@
 	padding: 2px 16px !important;
 	position: relative;
 }
+#sidebar-switcher-arrow,
+#viewButton .button-menu-dropmarker { /* Arrow position, type b */
+	transform: translate(6px, 0)
+}
+.menulist-label-box {
+	padding: 2px 26px 2px 16px !important;
+	position: relative;
+}
 .menulist-label-box:after { /* Arrow position */
 	position: absolute !important;
 	right: 8px !important;
 	top: 8px !important;
-}
-#sidebar-switcher-arrow,
-#viewButton .button-menu-dropmarker { /* Arrow position, type b */
-	transform: translate(6px, 0)
 }
 .menulist-label-box:after { /* Create arrow if icon tag no exist */
 	content: "";
 }
 
 /* Hover buttons */
+menulist:hover,
 #nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton):not([open]):not([disabled]):hover,
+#nav-bar toolbaritem.toolbaritem-combined-buttons toolbarbutton:not([open]):not([disabled]):hover,
 .subviewbutton.panel-subview-footer:hover,
 .panel-footer button:hover,
 #downloadsHistory:hover,
@@ -106,14 +169,30 @@
 .close-icon:not(.tab-close-button):hover,
 #TabsToolbar .toolbarbutton-1:hover,
 menulist:hover .menulist-label-box,
-.expander-down:hover, .expander-up:hover {
+.expander-down:hover, .expander-up:hover,
+button.close:hover,
+.notification-button:hover,
+.protections-popup-footer-button:hover,
+#identity-popup-security-expander:hover,
+#protections-popup-info-button:hover,
+.tracking-protection-button:hover,
+.dialog-button:hover,
+.autocomplete-richlistitem[type="loginsFooter"]:hover,
+.dialog-button-box button:not([disabled]):hover,
+.searchbar-engine-one-off-item:hover,
+.permission-popup-permission-remove-button:hover,
+#protections-popup-trackers-blocked-counter-box:hover,
+.button.connect-device:hover,
+#item-choose button:hover {
 	outline: 0 !important;
 	background: var(--sweet-button-hover-background) !important;
 }
 
 /* Active buttons */
+menulist[open],
 #nav-bar toolbarbutton:not(#urlbar-zoom-button):not([disabled]):not(#hack):active,
 #nav-bar toolbarbutton:not(#urlbar-zoom-button):not([disabled])[open],
+#nav-bar toolbaritem.toolbaritem-combined-buttons toolbarbutton:not([disabled])[open],
 .subviewbutton.panel-subview-footer:active,
 .panel-footer button:active,
 #downloadsHistory:active,
@@ -131,8 +210,22 @@ menulist:hover .menulist-label-box,
 .close-icon:not(.tab-close-button):active,
 #TabsToolbar .toolbarbutton-1:active, #TabsToolbar .toolbarbutton-1[open],
 menulist[open] .menulist-label-box,
-.expander-down:active, .expander-up:active {
-	background: linear-gradient(45deg, rgba(var(--sweet-start-gradient-color-rgb), 0.5), rgba(var(--sweet-end-gradient-color-rgb), 0.5)) !important;
+.expander-down:active, .expander-up:active,
+button.close:active, 
+.notification-button:active,
+.protections-popup-footer-button:not(#hack):active,
+#identity-popup-security-expander:active,
+#protections-popup-info-button:not(#hack):active,
+#protections-popup-info-button:not(#hack)[checked],
+.tracking-protection-button:active,
+.dialog-button:active,
+.autocomplete-richlistitem[type="loginsFooter"]:active,
+.dialog-button-box button:not([disabled]):active,
+.permission-popup-permission-remove-button:active,
+#protections-popup-trackers-blocked-counter-box:active,
+.button.connect-device:active,
+#item-choose button:active {
+	background: var(--sweet-button-active-background) !important;
 	box-shadow: var(--sweet-button-active-box-shadow) !important;
 	border-color: var(--sweet-button-active-border-color) !important;
 	border-bottom-color: var(--sweet-button-active-border-color) !important;
@@ -141,8 +234,10 @@ menulist[open] .menulist-label-box,
 
 /* Disabled buttons */
 #nav-bar toolbarbutton:not(#urlbar-zoom-button)[disabled],
+#nav-bar toolbaritem.toolbaritem-combined-buttons toolbarbutton:not(#urlbar-zoom-button)[disabled],
 #appMenu-popup .toolbaritem-combined-buttons toolbarbutton[disabled],
-#context-navigation menuitem[disabled] {
+#context-navigation menuitem[disabled],
+.dialog-button-box button[disabled] {
 	background: var(--sweet-button-disabled-background) !important;
 	border-color: var(--sweet-button-disabled-border-color) !important;
 	box-shadow: var(--sweet-button-disabled-box-shadow) !important;
@@ -150,7 +245,8 @@ menulist[open] .menulist-label-box,
 }
 #nav-bar toolbarbutton:not(#urlbar-zoom-button)[disabled] image,
 #appMenu-popup .toolbaritem-combined-buttons toolbarbutton[disabled] image,
-#context-navigation menuitem[disabled] image {
+#context-navigation menuitem[disabled] image,
+.dialog-button-box button[disabled] label {
 	opacity: .4 !important;
 }
 
@@ -161,9 +257,11 @@ menulist[open] .menulist-label-box,
 
 /* Inactive window buttons */
 #nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton):-moz-window-inactive,
+#nav-bar toolbaritem.toolbaritem-combined-buttons toolbarbutton:-moz-window-inactive,
 .findbar-container toolbarbutton:-moz-window-inactive,
 #sidebar-switcher-target:-moz-window-inactive,
-#viewButton:-moz-window-inactive {	
+#viewButton:-moz-window-inactive,
+.notification-button:-moz-window-inactive {	
 	background: var(--sweet-inactive-button-background) !important;
 	box-shadow: var(--sweet-inactive-button-box-shadow) !important;
 	border-color: var(--sweet-inactive-button-border-color) !important;
@@ -172,7 +270,11 @@ menulist[open] .menulist-label-box,
 /* Flat buttons */
 .subviewbutton-back:not(#hack),
 .close-icon:not(.tab-close-button),
-#TabsToolbar .toolbarbutton-1 {
+#TabsToolbar .toolbarbutton-1,
+.close-icon:not(.tab-close-button),
+button.close,
+#protections-popup-info-button,
+#protections-popup-trackers-blocked-counter-box {
 	background: transparent !important;
 	box-shadow: none !important;
 	border-color: transparent !important;
@@ -186,8 +288,29 @@ menulist[open] .menulist-label-box,
 	border-bottom-color: var(--sweet-button-border-accent-color) !important;
 }
 
+/* List style */
+.permission-popup-permission-remove-button,
+#item-choose button {
+	background: transparent !important;
+	box-shadow: none !important;
+	border-color: var(--sweet-popover-separator-color) !important;
+	border-radius: 5px !important;
+}
+.close-icon:not(.tab-close-button):not(:active):hover,
+button.close:not(:active):hover,
+#protections-popup-info-button:hover,
+.permission-popup-permission-remove-button:not(:active):hover,
+#protections-popup-trackers-blocked-counter-box:not(:active):hover,
+#item-choose button:not(:active):hover {
+	box-shadow: var(--sweet-button-box-shadow) !important;
+	border-color: var(--sweet-button-border-color) !important;
+	border-bottom-color: var(--sweet-button-border-accent-color) !important;
+}
+
+
 /* Circle buttons */
-#downloadsPanel-mainView .download-state .downloadButton {
+#downloadsPanel-mainView .download-state .downloadButton,
+.permission-popup-permission-remove-button:not(#hack) {
 	border-radius: 100% !important;
 }
 
@@ -198,7 +321,9 @@ menulist[open] .menulist-label-box,
 .panel-footer button:not(:only-of-type):not(:last-of-type),
 #appMenu-popup .toolbaritem-combined-buttons toolbarbutton:not(:last-of-type):not(#appMenu-zoomEnlarge-button),
 #context-navigation menuitem:not(:last-of-type),
-.findbar-container toolbarbutton.findbar-find-previous {
+.findbar-container toolbarbutton.findbar-find-previous,
+.findbar-button:not(:last-of-type),
+.search-panel-one-offs .searchbar-engine-one-off-item:not(:last-child) {
 	border-top-right-radius: 0 !important;
 	border-bottom-right-radius: 0 !important;
 	border-right-width: 0 !important;
@@ -212,7 +337,9 @@ menulist[open] .menulist-label-box,
 #appMenu-popup .toolbaritem-combined-buttons toolbarbutton:not(:first-of-type):not(#appMenu-fullscreen-button),
 #context-navigation menuitem:not(:first-of-type),
 .findbar-container toolbarbutton.findbar-find-previous,
-.findbar-container toolbarbutton.findbar-find-next {
+.findbar-container toolbarbutton.findbar-find-next,
+.findbar-button:not(:first-of-type),
+.search-panel-one-offs .searchbar-engine-one-off-item:not(:first-child) {
 	border-top-left-radius: 0 !important;
 	border-bottom-left-radius: 0 !important;
 	margin-left: 0 !important;
@@ -226,7 +353,9 @@ menulist[open] .menulist-label-box,
 /* Buttons with suggested action */
 #appMenu-popup .panel-banner-item[notificationid="update-restart"],
 button.popup-notification-primary-button,
-#editBookmarkPanelDoneButton {
+#editBookmarkPanelDoneButton,
+#tracking-action-block,
+.button.connect-device  {
 	color: white !important;
 	background: var(--sweet-button-suggested-action-background) !important;
 	border-color: var(--sweet-button-suggested-action-border-color) !important;
@@ -237,13 +366,17 @@ button.popup-notification-primary-button,
 
 #appMenu-popup .panel-banner-item[notificationid="update-restart"]:hover,
 button.popup-notification-primary-button.popup-notification-button:hover,
-#editBookmarkPanelDoneButton:hover {
+#editBookmarkPanelDoneButton:hover,
+#tracking-action-block:hover,
+.button.connect-device:hover {
 	background: var(--sweet-button-suggested-action-hover-background) !important;
 }
 
 #appMenu-popup .panel-banner-item[notificationid="update-restart"]:active,
 button.popup-notification-primary-button.popup-notification-button:active,
-#editBookmarkPanelDoneButton:active {
+#editBookmarkPanelDoneButton:active,
+#tracking-action-block:active,
+.button.connect-device:active {
 	background: var(--sweet-button-suggested-action-active-background) !important;
 	border-color: var(--sweet-button-suggested-action-active-border-color) !important;
 	box-shadow: var(--sweet-button-suggested-action-active-box-shadow) !important;
@@ -251,7 +384,9 @@ button.popup-notification-primary-button.popup-notification-button:active,
 }
 
 /* Buttons with destructive action */
-#editBookmarkPanelRemoveButton {
+#editBookmarkPanelRemoveButton,
+.identity-popup-permission-remove-button,
+#PanelUI-panic-view-button {
 	color: white !important;
 	background: var(--sweet-button-destructive-action-background) !important;
 	border-color: var(--sweet-button-destructive-action-border-color) !important;
@@ -260,15 +395,29 @@ button.popup-notification-primary-button.popup-notification-button:active,
 	text-shadow: 0 -1px rgba(0, 0, 0, 0.558275) !important;
 }
 
-#editBookmarkPanelRemoveButton:hover {
+#editBookmarkPanelRemoveButton:hover,
+.identity-popup-permission-remove-button:not(#hack):hover,
+#PanelUI-panic-view-button:hover {
 	background: var(--sweet-button-destructive-action-hover-background) !important;	
 }
 
-#editBookmarkPanelRemoveButton:active {
+#editBookmarkPanelRemoveButton:active,
+.identity-popup-permission-remove-button:not(#hack):active,
+#PanelUI-panic-view-button:active  {
 	background: var(--sweet-button-destructive-action-active-background) !important;
 	border-color: var(--sweet-button-destructive-action-active-border-color) !important;
 	box-shadow: var(--sweet-button-destructive-action-active-box-shadow) !important;
 }
+
+.identity-popup-permission-remove-button:not(#hack):hover { /* Is flat */
+	border-color: var(--sweet-button-destructive-action-border-color) !important;
+	border-bottom-color: var(--sweet-button-destructive-action-border-accent-color) !important;
+	box-shadow: var(--sweet-button-destructive-action-box-shadow) !important;
+}
+.identity-popup-permission-remove-button:not(#hack):hover .button-icon {
+	filter: invert(100%) brightness(200%);
+}
+
 	
 /* User sync menu, bigger avatar */
 #fxa-toolbar-menu-button .toolbarbutton-badge-stack {

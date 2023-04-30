@@ -151,6 +151,6 @@ toolbar .toolbarbutton-1 {
 	width: auto;
   }
   
-  #nav-bar-customization-target {
+#nav-bar-customization-target {
 	height: 32px;
-  }
+}

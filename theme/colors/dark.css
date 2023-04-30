@@ -30,6 +30,7 @@
 		--sweet-popover-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 		--sweet-popover-button-hover-background: #252a3f;
 		--sweet-popover-separator-color: rgba(0, 0, 0, 0.1);
+		--sweet-popover-color: #C3C7D1;
 
 		/* Header bar */
 		--sweet-headerbar-background: linear-gradient(to top, #0C0E14, #0C0E14);
