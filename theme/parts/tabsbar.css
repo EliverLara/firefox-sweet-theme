@@ -362,7 +362,8 @@ tab[selected]:-moz-window-inactive {
 	background: var(--sweet-toolbar-background) !important;
 }
 /* Active tab */
-.tab-background[selected=true] {
+.tab-background[selected=true],
+.tab-background[selected] {
 	background:
 	linear-gradient(
 	  to right, 
@@ -394,7 +395,7 @@ tab[selected]:-moz-window-inactive {
 :root:not(:-moz-window-inactive) .tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected=true]) {
 	background-color: var(--sweet-tabbar-tab-hover-background) !important;
 	border-image: none !important;
-	border-bottom: 3px solid var(--sweet-tabbar-tab-hover-border-bottom-color) !important;
+	border-bottom: none !important;
 }
 
 /* Full width tabs */
