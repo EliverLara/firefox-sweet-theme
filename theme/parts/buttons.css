@@ -12,7 +12,7 @@
 
 /* Buttons  */
 menulist,
-#nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton),
+#nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton):not(.titlebar-button),
 .subviewbutton.panel-subview-footer,
 .panel-footer button,
 #downloadsHistory,
@@ -60,11 +60,11 @@ button.close,
 }
 
 .subviewbutton-iconic {
-	-moz-box-pack: center !important;
+	justify-items: center !important;
 }
 
 /* Buttons with margins */
-#nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton),
+#nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton):not(.titlebar-button),
 #nav-bar toolbaritem.toolbaritem-combined-buttons,
 .notification-button,
 .subviewbutton.panel-subview-footer:not(:only-of-type),
@@ -150,7 +150,7 @@ menulist,
 
 /* Hover buttons */
 menulist:hover,
-#nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton):not([open]):not([disabled]):hover,
+#nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton):not(.titlebar-button):not([open]):not([disabled]):hover,
 #nav-bar toolbaritem.toolbaritem-combined-buttons toolbarbutton:not([open]):not([disabled]):hover,
 .subviewbutton.panel-subview-footer:hover,
 .panel-footer button:hover,
@@ -190,7 +190,7 @@ button.close:hover,
 
 /* Active buttons */
 menulist[open],
-#nav-bar toolbarbutton:not(#urlbar-zoom-button):not([disabled]):not(#hack):active,
+#nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.titlebar-button):not([disabled]):not(#hack):active,
 #nav-bar toolbarbutton:not(#urlbar-zoom-button):not([disabled])[open],
 #nav-bar toolbaritem.toolbaritem-combined-buttons toolbarbutton:not([disabled])[open],
 .subviewbutton.panel-subview-footer:active,

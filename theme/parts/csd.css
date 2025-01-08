@@ -2,13 +2,23 @@
 
 @namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/* #main-window {
-	-moz-appearance: -moz-window-titlebar !important;
-} */
+:root[tabsintitlebar] {
+	/* Always show nav bar window buttons*/
+	#nav-bar > .titlebar-buttonbox-container {
+		display: flex !important;
+	}
+
+	#toolbar-menubar, #TabsToolbar {
+		/* Always hide menu bar window buttons*/
+		& > .titlebar-buttonbox-container {
+			display: none !important;
+		}
+	}
+}
 
 /* Headerbar top border corners rounded */
 :root[tabsintitlebar][sizemode="normal"]:not([gtktiledwindow="true"]) #nav-bar {
-	border-radius: env(-moz-gtk-csd-titlebar-radius, 8px) env(-moz-gtk-csd-titlebar-radius, 8px) 0 0 !important;
+	border-radius: env(-moz-gtk-csd-titlebar-radius, 4px) env(-moz-gtk-csd-titlebar-radius, 4px) 0 0 !important;
 }
 
 /* Window buttons: at least 1 button */
@@ -28,28 +38,10 @@
 /* Window buttons: 3 buttons */
 @media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
 	:root{
-		--navbar-csd-offset: 90px;
+		--navbar-csd-offset: 120px;
 	}
 }
-/* Right window buttons offset by button count */
-:root[tabsintitlebar]:not([inFullscreen]) #nav-bar {
-	padding-left: 3px !important;
-	padding-right: var(--navbar-csd-offset) !important;
-}
-/* Fullscreen headerbar padding for 1 button */
-:root[tabsintitlebar][inFullscreen]:not([inDOMFullscreen]) #nav-bar {
-	padding-right: 50px !important;
-}
 
-/* Window buttons box */
-:root[tabsintitlebar] #titlebar .titlebar-buttonbox-container,
-:root[tabsintitlebar] #titlebar-buttonbox-container,
-:root[tabsintitlebar][inFullscreen] #window-controls {
-	padding: 0 3px 0 4px;
-	position: absolute !important;	
-	right: 0;
-	top: 0;
-}
 :root[tabsintitlebar] #titlebar .titlebar-buttonbox {
 	-moz-appearance: none !important;
 }
@@ -74,59 +66,11 @@
 :root[tabsintitlebar][inFullscreen] #window-controls:-moz-window-inactive toolbarbutton .toolbarbutton-icon {
 	opacity: .5 !important;
 }
-/* :root[tabsintitlebar] #titlebar:not(:-moz-window-inactive) .titlebar-button:not([disabled]):hover,
-:root[tabsintitlebar][inFullscreen] #window-controls:not(:-moz-window-inactive) toolbarbutton:not([disabled]):hover {
-	background-image: var(--sweet-button-hover-background);
-	border-color: var(--sweet-button-border-color) !important;
-	border-bottom-color: var(--sweet-button-border-accent-color) !important;
-	box-shadow: var(--sweet-button-box-shadow);
-}
-:root[tabsintitlebar] #titlebar:not(:-moz-window-inactive) .titlebar-button:not([disabled]):active,
-:root[tabsintitlebar][inFullscreen] #window-controls:not(:-moz-window-inactive) toolbarbutton:not([disabled]):active {
-	background: var(--sweet-button-active-background);
-	box-shadow: var(--sweet-button-active-box-shadow);
-	border-color: var(--sweet-button-active-border-color) !important;
-} */
 
 /* Remove close and minimize buttons from fullscreen buttons */
 :root[tabsintitlebar][inFullscreen] #window-controls #close-button,
 :root[tabsintitlebar][inFullscreen] #window-controls #minimize-button {
 	display: none;
-}
-
-/* Left window buttons */	
-@media (-moz-gtk-csd-reversed-placement) {	
-	:root[tabsintitlebar]:not([inFullscreen]) #nav-bar {
-		padding-right: 3px !important;
-	}
-	
-	/* Window buttons box */
-	:root[tabsintitlebar] #titlebar .titlebar-buttonbox-container {
-		padding: 0 3px 0 4px;
-		left: 0;
-		right: auto;
-	}
-
-	/* Window controls: at least 1 button */
-	@media (-moz-gtk-csd-minimize-button), (-moz-gtk-csd-maximize-button), (-moz-gtk-csd-close-button) {
-		:root[tabsintitlebar]:not([inFullscreen]) #nav-bar {
-			padding-left: 50px !important;
-		}
-	}
-	/* Window controls: at least 2 buttons */
-	@media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button),
-				 (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-close-button),
-				 (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
-		:root[tabsintitlebar]:not([inFullscreen]) #nav-bar {
-			padding-left: 90px !important;
-		}
-	}
-	/* Window controls: 3 buttons */
-	@media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
-		:root[tabsintitlebar]:not([inFullscreen]) #nav-bar {
-			padding-left: 90px !important;
-		}
-	} 
 }
 
 /* Remove tabsbar titlebar blank spaces */
@@ -149,20 +93,6 @@
 :root[tabsintitlebar] #navigator-toolbox[movingtab] #TabsToolbar {
 	padding-bottom: 0 !important;
 }
-
-/* Allow window drag with headerbar buttons */
-/* :root[tabsintitlebar] #nav-bar *,
-:root[tabsintitlebar] #titlebar .titlebar-button,
-:root[tabsintitlebar][inFullscreen] #window-controls toolbarbutton {
-	-moz-window-dragging: drag;
-}
-
-:root[tabsintitlebar] #nav-bar .urlbar-input-box, 
-:root[tabsintitlebar] #nav-bar .urlbar-input-box *,
-#back-button,
-#forward-button{
-	-moz-window-dragging: no-drag !important;
-} */
 
 /* FF 60 fixes */
 :root[tabsintitlebar] #titlebar[style="margin-bottom: -1px;"] {

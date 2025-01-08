@@ -9,8 +9,8 @@
 
 /* Toolbox colors */
 #navigator-toolbox {
-	border: 0 !important;
-	background: none !important;
+	background: var(--sweet-toolbar-background) !important;
+	border-bottom: 1px solid var(--sweet-toolbar-border-color) !important;
 }
 
 #nav-bar, #PersonalToolbar, #toolbar-menubar, #TabsToolbar, findbar {
@@ -33,16 +33,25 @@ findbar:-moz-window-inactive label,
 	opacity: 0.7 !important;
 }
 
-#toolbar-menubar:not([inactive=true]) {
+#toolbar-menubar:not([inactive]) {
 	margin-bottom: 0 !important;
 }
+
+#toolbar-menubar[inactive] {
+overflow: hidden;
+max-height: 0;
+max-width: 0;
+margin: 0;
+padding: 0;
+}
+
 #PersonalToolbar {
 	padding-top: 2px !important;
 	height: 32px;
 }
 
 /* Overrides: Remove border below the menu bar / above the header bar */
-#TabsToolbar:not([collapsed="true"]) + #nav-bar {
+#TabsToolbar:not([collapsed]) + #nav-bar {
 	border-top-width: 0 !important;
 }
 #navigator-toolbox::after {
@@ -51,22 +60,19 @@ findbar:-moz-window-inactive label,
 
 /* Reorder toolbars */
 #navigator-toolbox #nav-bar, findbar {
-	-moz-box-ordinal-group: 0;
-	order: 0;
+	order: -1;
 }
 #navigator-toolbox #PersonalToolbar {
-	-moz-box-ordinal-group: 1;
-	order: 2;
+	order: 0;
 }
 #navigator-toolbox #titlebar {
-	-moz-box-ordinal-group: 2;
-	order: 3;
+	order: 1;
 }
 #navigator-toolbox toolbar {
-	-moz-box-ordinal-group: 10;
+	order: 10;
 }
 #navigator-toolbox #TabsToolbar {
-	-moz-box-ordinal-group: 100;
+	order: 100;
 }
 
 /* Overrides: Don't shift other toolbars on tab drag and drop */
