@@ -2,7 +2,8 @@
 
 @namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-:root[tabsintitlebar] {
+:root[tabsintitlebar],
+:root[customtitlebar] {
 	/* Always show nav bar window buttons*/
 	#nav-bar > .titlebar-buttonbox-container {
 		display: flex !important;
